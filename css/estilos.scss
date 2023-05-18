@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2? family= Playfair+Display & display=swap');
+$colores: (
+principal: #fff9d8,
+secundario: #e1c8ff,
+tercero: #3d5a80,
+cuarto:#e0fbfc,
+);
+
+@mixin animacion-imagen($duracion, $tipo) {
+    transition: transform $duracion $tipo;
+    
+    &:hover {
+    transform: scale(1.1);
+    }
+}
+@mixin animacion-flotar($duracion, $repeticiones) {
+    animation: flotar $duracion $repeticiones;
+    
+    @keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    }
+}
+@mixin animacion-achicar() {
+    transition: transform 0.3s;
+    
+    &:hover {
+    transform: scale(0.8);
+    }
+}
+
+body {
+background-color: map-get($colores, principal);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+    img{
+        width: 70px;
+        height: 100px;
+    }
+}
+
+.parrafos {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    padding: 30px 30px;
+    background-color: map-get($colores, principal);
+
+}
+.relatos{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding: 30px 30px;
+    background-color: map-get($colores, principal);
+
+}
+footer {
+
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 30px 10px ;
+    font-size: 20px;
+    background-color: map-get($colores, secundario);
+
+    
+    }
+
+h1 {  
+    background-color: map-get($colores, secundario);
+    text-align: center;
+}
+h3 {
+    text-align: center;
+
+}
+
+.galeria{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    background-color: map-get($colores, principal);
+    img {
+        max-width: 400px;
+        padding: 1rem;
+        @include animacion-imagen(0.3s, ease-in-out);
+    }
+}
+
+.contenedor {
+    display:flex;
+    flex-flow:wrap;
+    justify-content: center;
+    width: 75vw;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+    .imagen-1{
+        width: 650px;
+        height: 350px;
+        margin: 10px 10px;
+    }
+    .imagen-2{
+        width: 650px;
+        height: 350px;
+        margin: 10px 10px;
+    }
+    .imagen-3{
+        width: 650px;
+        height: 350px;
+        margin: 10px 10px;
+    }
+
+}
+
+.card{
+    padding: 10px;
+    display: inline-block;
+    
+}
+.colorport1{
+    
+    background-color: map-get($colores, tercero);
+}
+.colorport2{
+    background-color: map-get($colores, cuarto);
+}
+.colorport3 {
+    background-color: map-get($colores, cuarto);
+}
+.perfil{
+width: 350px;
+height: auto;
+border-radius: 20%;
+}
+.PieDePerfil{
+    background-color: map-get($colores, tercero);
+    color: #fff;
+}
+.PieDePagina{
+    background-color: map-get($colores, secundario);
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    padding: 30px 30px;
+}
+.animacion{
+    width: 85%;
+    @include animacion-flotar(3s, infinite);
+}
+.animacion1{
+        @include animacion-achicar();
+    }
+
