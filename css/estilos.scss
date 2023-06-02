@@ -153,6 +153,30 @@ border-radius: 20%;
     font-size: 28px;
     padding: 30px 30px;
 }
+.redes-sociales {
+    margin-bottom: 10px;
+    
+    }
+    
+    .social-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #000000;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 25px;
+    line-height: 30px;
+    margin-right: 10px;
+    }
+    
+    .social-icon:hover {
+    background-color: #fc8f8f;
+    }
+    .derechos-reservados p {
+    font-size: 24px;
+    color: #000000;
+    }
 .animacion{
     width: 85%;
     @include animacion-flotar(3s, infinite);
